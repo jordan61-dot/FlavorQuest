@@ -18,4 +18,16 @@ class SourceMetadataTests(unittest.TestCase):
   self.assertEqual(payload['source']['datasetDate'],'2025-10')
   self.assertTrue(payload['source']['download'].endswith('2025-10-31.zip'))
 
+class RebuildTests(unittest.TestCase):
+ def test_forced_rebuild_does_not_skip_unchanged_archive(self):
+  import tempfile, json
+  from pathlib import Path
+  from download_refresh import unchanged
+  with tempfile.TemporaryDirectory() as folder:
+   report=Path(folder)/'report.json';report.write_text(json.dumps({'sourceArchiveSha256':'same'}))
+   self.assertTrue(unchanged(report,'same'))
+   self.assertFalse(unchanged(report,'same',True))
+   self.assertFalse(unchanged(report,'new'))
+   self.assertFalse(unchanged(Path(folder)/'missing','same'))
+
 if __name__=='__main__':unittest.main()

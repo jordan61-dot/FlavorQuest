@@ -1,0 +1,30 @@
+# Recompile actual official data and exercise reviewed publication; no personal data.
+name: Verify full public reference publication
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/verify-publication.yml]
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: public-reference-refresh
+  cancel-in-progress: false
+jobs:
+  verify-publication:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Rebuild official source and publish review branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 "https://github.com/${GITHUB_REPOSITORY}.git" reference-work
+          cd reference-work
+          python3 -m unittest discover -s scripts/reference -p 'test_*.py'
+          python3 scripts/reference/download_refresh.py --force
+          python3 scripts/reference/publish_refresh.py

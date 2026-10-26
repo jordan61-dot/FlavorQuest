@@ -28,14 +28,16 @@ def fetch(url,output=None,limit=2*1024*1024):
    if output:output.write(chunk)
    else:chunks.append(chunk)
  return digest.hexdigest() if output else b''.join(chunks).decode('utf-8')
+def unchanged(report, checksum, force=False):
+ return not force and report.exists() and json.loads(report.read_text()).get('sourceArchiveSha256')==checksum
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,default=Path('public/reference'));p.add_argument('--check-only',action='store_true');a=p.parse_args()
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,default=Path('public/reference'));p.add_argument('--check-only',action='store_true');p.add_argument('--force',action='store_true',help='Recompile the official archive even if its checksum is unchanged.');a=p.parse_args()
  url=latest(fetch(LISTING));print('Supported official source:',url)
  if a.check_only:return
  with tempfile.TemporaryDirectory() as temp:
   archive=Path(temp)/'source.zip'
   with archive.open('wb') as out:checksum=fetch(url,out,512*1024*1024)
   report=a.output/'build-report.json'
-  if report.exists() and json.loads(report.read_text()).get('sourceArchiveSha256')==checksum:print('Unchanged source archive. No refresh or publication needed.');return
+  if unchanged(report,checksum,a.force):print('Unchanged source archive. No refresh or publication needed.');return
   subprocess.run([sys.executable,str(Path(__file__).with_name('refresh_index.py')),str(archive),'--output',str(a.output),'--source-url',url],check=True)
 if __name__=='__main__':main()
