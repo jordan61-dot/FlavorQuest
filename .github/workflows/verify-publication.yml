@@ -18,6 +18,7 @@ jobs:
     timeout-minutes: 25
     env:
       GH_TOKEN: ${{ github.token }}
+      PYTHONDONTWRITEBYTECODE: 1
     steps:
       - name: Rebuild official source and publish review branch
         shell: bash
