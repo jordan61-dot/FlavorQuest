@@ -11,3 +11,7 @@ The refresh workflow uses a standard public Ubuntu runner, no artifacts or cache
 ## Publication verification
 
 Forced official-source rebuild run 40253332821 rebuilt and validated 10,709 records and 32 shards and pushed `reference-refresh`. Repository policy blocked Actions pull-request creation. The repository owner must enable **Settings → Actions → General → Workflow permissions → Allow GitHub Actions to create and approve pull requests** before automatic PR creation can work. No automatic approval, merge or private application deployment is configured. The saved review branch is retained; do not force-overwrite it. Current Python suite: 27 passing tests.
+
+### Superseding result
+
+The PR permission blocker is resolved: hosted run 40254148286 passed 30 tests, verified 10,709 products and 32 shards, and created https://github.com/jordan61-dot/FlavorQuest/pull/1. Safe resume validates the saved reference-only branch without overwriting it. No automatic merge or private application deployment occurs.
