@@ -4,7 +4,7 @@ from pathlib import Path
 from unittest.mock import patch
 from compile_usda import compile_index, compact_details
 from test_compile_usda import raw, STAMP
-from publish_refresh import publish
+from publish_refresh import publish, resume
 from verify_index import verify
 
 class PublicationTests(unittest.TestCase):
@@ -62,4 +62,18 @@ class PublicationTests(unittest.TestCase):
   self.assertTrue(self.run_git('ls-remote','--heads','origin','refs/heads/reference-refresh'))
  def test_coverage_uses_actual_release_not_april_2026(self):
   report=json.loads((self.root/'coverage-report.json').read_text());self.assertEqual(report['datasetDate'],'2025-10')
+ def test_resume_validates_saved_branch_without_rewriting_it(self):
+  (self.root/'new.json').write_text('{}');self.assertTrue(self.invoke());saved=self.run_git('rev-parse','HEAD');self.run_git('checkout','main');self.gh=[]
+  with contextlib.redirect_stdout(io.StringIO()):self.assertTrue(resume())
+  self.assertEqual(self.run_git('--git-dir='+str(self.remote),'rev-parse','reference-refresh'),saved)
+  self.assertEqual(self.run_git('branch','--show-current'),'main')
+  self.assertEqual(len(self.gh),1)
+ def test_resume_rejects_branch_with_nonreference_changes(self):
+  self.run_git('checkout','-b','reference-refresh');Path('private-note.txt').write_text('not public');self.run_git('add','.');self.run_git('commit','-m','bad branch');self.run_git('push','origin','reference-refresh');self.run_git('checkout','main')
+  with self.assertRaisesRegex(ValueError,'non-reference'):resume()
+  self.assertEqual(self.gh,[])
+ def test_resume_refuses_a_dirty_checkout(self):
+  Path('private-note.txt').write_text('local')
+  with self.assertRaisesRegex(ValueError,'clean checkout'):resume()
+  self.assertEqual(self.gh,[])
 if __name__=='__main__':unittest.main()

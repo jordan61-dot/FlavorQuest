@@ -26,5 +26,9 @@ jobs:
           git clone --depth 1 "https://github.com/${GITHUB_REPOSITORY}.git" reference-work
           cd reference-work
           python3 -m unittest discover -s scripts/reference -p 'test_*.py'
-          python3 scripts/reference/download_refresh.py --force
-          python3 scripts/reference/publish_refresh.py
+          if [ -n "$(git ls-remote --heads origin refs/heads/reference-refresh)" ]; then
+            python3 scripts/reference/publish_refresh.py --resume
+          else
+            python3 scripts/reference/download_refresh.py --force
+            python3 scripts/reference/publish_refresh.py
+          fi
