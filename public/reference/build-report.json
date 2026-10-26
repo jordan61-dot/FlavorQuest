@@ -1,0 +1,17 @@
+{
+  "sourceRows": 455458,
+  "eligibleRows": 14396,
+  "products": 10709,
+  "skippedMissingIdentity": 172,
+  "brandLabels": 1816,
+  "ownerFallbackProducts": 322,
+  "rootBeerProducts": 330,
+  "sourceArchiveSha256": "57b0f122e61cf2840f03c11e9520275d0d2018dc036e16273fcd3cd370db2256",
+  "detailShards": 32,
+  "detailBytes": 3274850,
+  "maxDetailBytes": 117656,
+  "bytes": 3810509,
+  "sha256": "c8429748e37699810d4e8dbd43e119aba106c1bed174b5ba27a12ffca0625ae0",
+  "generatedAt": "2026-10-25T05:42:02.414500Z",
+  "datasetDate": "2026-04"
+}

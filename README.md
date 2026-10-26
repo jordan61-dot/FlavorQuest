@@ -1,9 +1,9 @@
-# FlavorQuest reference services
+# FlavorQuest public reference index
 
-Public reference-data preparation for Explorer's integrated FlavorQuest module.
+Public USDA FoodData Central beverage references and reproducible compiler. No personal collection records are included.
 
-This repository is reserved for reusable public beverage reference data, source attribution, processing scripts, and refresh automation. The integrated application and private collection handoff remain in the private Explorer repository.
+Source: https://fdc.nal.usda.gov/download-datasets/ (USDA public-domain/CC0 data). See public/reference/build-report.json and coverage-report.json for source identity, counts and limitations. Product rows are source records, not promises of current availability or distinct formulations.
 
-Do not commit personal tasting notes, health context, private backups, API credentials, or account tokens here.
+Run `python3 -m unittest discover -s scripts/reference -p 'test_*.py'` and `python3 scripts/reference/verify_index.py` to verify.
 
-Reference refresh automation has not yet been installed or verified in this repository.
+The refresh workflow uses a standard public Ubuntu runner, no artifacts or caches, and no paid services. It runs on relevant code pushes, manual dispatch and monthly on the third day at 09:17 UTC. Scheduled jobs may be delayed or disabled. Changes prepare a review branch and do not deploy Explorer. Existing review branches are not overwritten. This repository contains no private application data or credentials.

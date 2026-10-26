@@ -1,0 +1,300 @@
+{
+  "description": "Normalized source identity records, not independently verified unique formulations or current availability. Residual wording and manufacturer-label duplicates may remain.",
+  "generatedAt": "2026-10-25T05:42:02.414500Z",
+  "datasetDate": "2026-04",
+  "queries": {
+    "root beer": {
+      "records": 330,
+      "brandOrOwnerLabels": 185,
+      "examples": [
+        {
+          "id": "usda:2052312",
+          "name": "365 Everyday Value Root Beer Flavored Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2052312/nutrients"
+        },
+        {
+          "id": "usda:2607844",
+          "name": "365 Whole Foods Market Root Beer",
+          "source": "https://fdc.nal.usda.gov/food-details/2607844/nutrients"
+        },
+        {
+          "id": "usda:2140691",
+          "name": "365 Whole Foods Market Root Beer Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2140691/nutrients"
+        },
+        {
+          "id": "usda:2111423",
+          "name": "A&W Diet Root Beer",
+          "source": "https://fdc.nal.usda.gov/food-details/2111423/nutrients"
+        },
+        {
+          "id": "usda:2109275",
+          "name": "A&W Diet Soda, Root Beer",
+          "source": "https://fdc.nal.usda.gov/food-details/2109275/nutrients"
+        },
+        {
+          "id": "usda:2111424",
+          "name": "A&W, Naturally & Artificially Flavored Soda Made With Aged Vanilla, Root Beer",
+          "source": "https://fdc.nal.usda.gov/food-details/2111424/nutrients"
+        },
+        {
+          "id": "usda:2571090",
+          "name": "A&W Root Beer",
+          "source": "https://fdc.nal.usda.gov/food-details/2571090/nutrients"
+        },
+        {
+          "id": "usda:2109304",
+          "name": "A&W Root Beer, Aged Vanilla",
+          "source": "https://fdc.nal.usda.gov/food-details/2109304/nutrients"
+        }
+      ]
+    },
+    "Fanta": {
+      "records": 39,
+      "brandOrOwnerLabels": 1,
+      "examples": [
+        {
+          "id": "usda:2211079",
+          "name": "Fanta Apple Flavored Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2211079/nutrients"
+        },
+        {
+          "id": "usda:2718349",
+          "name": "Fanta Apple Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2718349/nutrients"
+        },
+        {
+          "id": "usda:1045009",
+          "name": "Fanta Berry Flavored Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/1045009/nutrients"
+        },
+        {
+          "id": "usda:2742313",
+          "name": "Fanta Berry Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2742313/nutrients"
+        },
+        {
+          "id": "usda:2742713",
+          "name": "Fanta Berry Soda Fridge Pack",
+          "source": "https://fdc.nal.usda.gov/food-details/2742713/nutrients"
+        },
+        {
+          "id": "usda:1627630",
+          "name": "Fanta Caffeine Free Soda, Apple",
+          "source": "https://fdc.nal.usda.gov/food-details/1627630/nutrients"
+        },
+        {
+          "id": "usda:1726705",
+          "name": "Fanta Caffeine Free Soda, Orange",
+          "source": "https://fdc.nal.usda.gov/food-details/1726705/nutrients"
+        },
+        {
+          "id": "usda:1593562",
+          "name": "Fanta Caffeine Free Soda, Strawberry",
+          "source": "https://fdc.nal.usda.gov/food-details/1593562/nutrients"
+        }
+      ]
+    },
+    "Ale-8-One": {
+      "records": 2,
+      "brandOrOwnerLabels": 1,
+      "examples": [
+        {
+          "id": "usda:2612227",
+          "name": "Ale-8-One Caffeine Free Soft Drink",
+          "source": "https://fdc.nal.usda.gov/food-details/2612227/nutrients"
+        },
+        {
+          "id": "usda:2542579",
+          "name": "Ale-8-One Cherry Soft Drink",
+          "source": "https://fdc.nal.usda.gov/food-details/2542579/nutrients"
+        }
+      ]
+    },
+    "Sioux City": {
+      "records": 4,
+      "brandOrOwnerLabels": 1,
+      "examples": [
+        {
+          "id": "usda:2092607",
+          "name": "Sioux City Cream Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2092607/nutrients"
+        },
+        {
+          "id": "usda:2541577",
+          "name": "Sioux City Pure Cane Sugar Birch Beer",
+          "source": "https://fdc.nal.usda.gov/food-details/2541577/nutrients"
+        },
+        {
+          "id": "usda:2543250",
+          "name": "Sioux City Pure Cane Sugar Root Beer",
+          "source": "https://fdc.nal.usda.gov/food-details/2543250/nutrients"
+        },
+        {
+          "id": "usda:2542741",
+          "name": "Sioux City Pure Cane Sugar Sarsaparilla",
+          "source": "https://fdc.nal.usda.gov/food-details/2542741/nutrients"
+        }
+      ]
+    },
+    "Sprecher": {
+      "records": 27,
+      "brandOrOwnerLabels": 2,
+      "examples": [
+        {
+          "id": "usda:2540668",
+          "name": "Dr Sprecher Fire-Brewed Craft Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2540668/nutrients"
+        },
+        {
+          "id": "usda:2552502",
+          "name": "Sprecher Black Cherry Fire-Brewed Craft Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2552502/nutrients"
+        },
+        {
+          "id": "usda:2669011",
+          "name": "Sprecher Cherry Cola Fire-Brewed Craft Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2669011/nutrients"
+        },
+        {
+          "id": "usda:2541655",
+          "name": "Sprecher Citrus Splash Caffeinated Craft Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2541655/nutrients"
+        },
+        {
+          "id": "usda:2544650",
+          "name": "Sprecher Citrus Splash Caffeinated Fire-Brewed Craft Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2544650/nutrients"
+        },
+        {
+          "id": "usda:2669008",
+          "name": "Sprecher Cream Fire-Brewed Craft Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2669008/nutrients"
+        },
+        {
+          "id": "usda:2654100",
+          "name": "Sprecher Door County Cherry Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2654100/nutrients"
+        },
+        {
+          "id": "usda:2542474",
+          "name": "Sprecher, Gourmet Soda, Blueberry",
+          "source": "https://fdc.nal.usda.gov/food-details/2542474/nutrients"
+        }
+      ]
+    },
+    "Frostie": {
+      "records": 12,
+      "brandOrOwnerLabels": 1,
+      "examples": [
+        {
+          "id": "usda:2131948",
+          "name": "Frostie Blue Lemonade Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2131948/nutrients"
+        },
+        {
+          "id": "usda:2144240",
+          "name": "Frostie Caffeine Free Root Beer Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2144240/nutrients"
+        },
+        {
+          "id": "usda:2085087",
+          "name": "Frostie Cherry Limeade Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2085087/nutrients"
+        },
+        {
+          "id": "usda:2105466",
+          "name": "Frostie Classic Lemonade",
+          "source": "https://fdc.nal.usda.gov/food-details/2105466/nutrients"
+        },
+        {
+          "id": "usda:2083674",
+          "name": "Frostie Grape Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2083674/nutrients"
+        },
+        {
+          "id": "usda:2105311",
+          "name": "Frostie Lemonade, Strawberry",
+          "source": "https://fdc.nal.usda.gov/food-details/2105311/nutrients"
+        },
+        {
+          "id": "usda:499248",
+          "name": "Frostie, Root Beer",
+          "source": "https://fdc.nal.usda.gov/food-details/499248/nutrients"
+        },
+        {
+          "id": "usda:2453722",
+          "name": "Frostie Root Beer Pure Cane Sugar Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2453722/nutrients"
+        }
+      ]
+    },
+    "Nehi": {
+      "records": 3,
+      "brandOrOwnerLabels": 1,
+      "examples": [
+        {
+          "id": "usda:1911696",
+          "name": "Nehi, Flavored Soda, Peach",
+          "source": "https://fdc.nal.usda.gov/food-details/1911696/nutrients"
+        },
+        {
+          "id": "usda:2152291",
+          "name": "Nehi Peach Caffeine Free Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2152291/nutrients"
+        },
+        {
+          "id": "usda:2136523",
+          "name": "Nehi Peach Soda",
+          "source": "https://fdc.nal.usda.gov/food-details/2136523/nutrients"
+        }
+      ]
+    },
+    "Bundaberg": {
+      "records": 10,
+      "brandOrOwnerLabels": 1,
+      "examples": [
+        {
+          "id": "usda:2624132",
+          "name": "Bundaberg Australian Ginger Beer",
+          "source": "https://fdc.nal.usda.gov/food-details/2624132/nutrients"
+        },
+        {
+          "id": "usda:2653303",
+          "name": "Bundaberg Diet Ginger Beer",
+          "source": "https://fdc.nal.usda.gov/food-details/2653303/nutrients"
+        },
+        {
+          "id": "usda:1931337",
+          "name": "Bundaberg Flavored Sparkling Fruit Drink, Peach",
+          "source": "https://fdc.nal.usda.gov/food-details/1931337/nutrients"
+        },
+        {
+          "id": "usda:2084949",
+          "name": "Bundaberg, Flavoured Sparkling Drink, Peach",
+          "source": "https://fdc.nal.usda.gov/food-details/2084949/nutrients"
+        },
+        {
+          "id": "usda:2571228",
+          "name": "Bundaberg Ginger Beer",
+          "source": "https://fdc.nal.usda.gov/food-details/2571228/nutrients"
+        },
+        {
+          "id": "usda:2168850",
+          "name": "Bundaberg Ginger Beer Non-Alcoholic Beverage",
+          "source": "https://fdc.nal.usda.gov/food-details/2168850/nutrients"
+        },
+        {
+          "id": "usda:1970886",
+          "name": "Bundaberg Non-Alcoholic Ginger Beer Beverage",
+          "source": "https://fdc.nal.usda.gov/food-details/1970886/nutrients"
+        },
+        {
+          "id": "usda:499340",
+          "name": "Bundaberg Peach Flavored Sparkling Fruit Drink",
+          "source": "https://fdc.nal.usda.gov/food-details/499340/nutrients"
+        }
+      ]
+    }
+  }
+}

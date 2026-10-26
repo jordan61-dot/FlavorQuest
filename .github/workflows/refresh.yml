@@ -1,0 +1,49 @@
+# Public reference-data workflow; never publish personal application records here.
+# Do not move the private Explorer application repository or personal data there.
+name: Prepare verified beverage reference updates
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/reference/**
+      - .github/workflows/refresh.yml
+  schedule:
+    - cron: '17 9 3 * *'
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: public-reference-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    # No runners, artifacts or caches are used for private repositories.
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Compile and validate a public reference update
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 "https://github.com/${GITHUB_REPOSITORY}.git" reference-work
+          cd reference-work
+          python3 -m unittest discover -s scripts/reference -p 'test_*.py'
+          python3 scripts/reference/download_refresh.py
+          python3 scripts/reference/verify_index.py
+          if [ -z "$(git status --porcelain -- public/reference)" ]; then
+            echo 'Public reference source unchanged.'
+            exit 0
+          fi
+          branch=reference-refresh
+          gh auth setup-git
+          git checkout -b "$branch"
+          git add public/reference
+          git config user.name 'Reference update workflow'
+          git config user.email 'reference-update@users.noreply.github.com'
+          git commit -m 'Prepare validated public beverage references'
+          # No force push: an existing unreviewed branch fails safely.
+          git push origin "$branch"
+          gh pr create --title 'Review validated beverage reference refresh' --body 'Public source metadata only. Compiler, schema, identifier, shard and integrity checks passed. Review before importing into Explorer; no personal data or automatic application deployment is included.'
