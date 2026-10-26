@@ -34,7 +34,7 @@ def verify(root=Path('public/reference')):
         queries[query]={'records':len(rows),'brandOrOwnerLabels':len({normal(p['brand']) for p in rows}),
             'examples':[{'id':p['id'],'name':p['name'],'source':p['source']} for p in rows[:8]]}
     coverage={'description':'Normalized source identity records, not independently verified unique formulations or current availability. Residual wording and manufacturer-label duplicates may remain.',
-       'generatedAt':index['generatedAt'],'datasetDate':'2026-04','queries':queries}
+       'generatedAt':index['generatedAt'],'datasetDate':index['source']['datasetDate'],'queries':queries}
     (root/'coverage-report.json').write_text(json.dumps(coverage,indent=2,ensure_ascii=False)+'\n')
     print(json.dumps({'verifiedProducts':len(products),'verifiedShards':len(list((root/'details').glob('*.json'))),'rootBeerRecords':queries['root beer']['records'],'rootBeerBrandOrOwnerLabels':queries['root beer']['brandOrOwnerLabels'],'queries':{q:v['records'] for q,v in queries.items()}},indent=2))
 if __name__=='__main__':verify()
